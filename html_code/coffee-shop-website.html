@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShakeEmBakeEmCafe</title>
+    <style>
+    .container{
+        display: flex;
+        justify-content:center;
+    }
+    .staff
+    {
+        background-color:#686868;
+    }
+    .cards
+    {
+        border-width: .5px;
+        border-style:solid;
+        border-color:white;
+        margin: 20px;
+        height: 300px;
+        width:250px;
+        border-radius:10px;
+        position:relative;
+        
+    }
+    h2
+    {
+        background-color: #8567BD;
+        padding: 20px;
+        height: 100px;
+        margin-top: 0px;
+        margin-bottom:0px;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        text-align:center;
+    }
+    img
+    {
+        width: 90px;
+        border-radius: 50%;
+        width: 100px;
+        display: block;
+        position: absolute;
+        top:25%;
+        margin-left:30%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .cards div
+    {
+        background-color: white;
+        padding: 20px;
+        padding-top: 40px;
+        height: 100px;
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    body, html 
+    {
+        height: 100%;
+    }
+    .hero-image
+    {
+        background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero-image.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        background-attachment:fixed;
+        
+    }
+    h1
+    {
+        text-align:center;
+        font-family:'Trebuchet MS';
+        color:white;
+    }
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Trebuchet MS';
+    }
+    .hero-text span
+    {
+        display:inline-block;
+        color:red;
+        border-width: 5px;
+        border-style:solid;
+        border-color:white;
+        animation: Shake 0.82s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes Shake {    
+        0% {transform: rotate(5deg);    }    
+        25% {transform: rotate(-6deg);    }    
+        50% {transform: rotate(5deg);    }    
+        75% {transform: rotate(-6deg);    }    
+        100% {transform: rotate(5deg);    }
+    }
+    </style>
+</head>
+<body>
+    <!-- Add hero image -->
+    
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>We will <span>shake</span> your world of <span>Coffee!</span></h1>
+            </div>
+        </div>
+
+    
+<!-- Put each staff member in their own div container box staff card thingy -->
+ <!-- Add photos for each staff member -->
+ 
+  <div class="staff">
+    <h1>Our Staff</h1>
+        <div class="container">
+                <div class="cards">
+                    <h2>Abby Flour</h2>
+                    <img src="abby.jpg">
+                    <div>Can't live without her coffee, specifically the caffeine. It's in her blood and will be in yours soon.</div>
+                </div>
+                
+                <div class="cards">
+                    <h2>Beth &#8482;</h2>
+                    <img src="bethany.jpg">
+                    <div>Her shout of excitement will burry itself deep in your bones, nearly as deep as our columbian bleand, dark roast, extra caffeine shots.</div>
+                </div>
+
+                <div class="cards">
+                    <h2>Charles, No!</h2>
+                    <img src="charles.jpg">
+                    <div>Please do not disturb or interact with Charles in any way.</div>
+                </div>
+            
+        </div>
+    </div>
+    </body>
+</body>
+</html>

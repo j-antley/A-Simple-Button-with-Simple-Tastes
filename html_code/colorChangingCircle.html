@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Changing Circle</title>
+    <script>
+        
+        function colorChange() 
+        {
+            console.log('changing color!');
+            document.getElementsByClassName('circle').style.backgroundColor = "blue";}
+
+        function colorChangeRed()
+        {
+            console.log('changing color again')
+            document.getElementsByClassName('circle').style.backgroundColor = 'red';
+        }
+    </script>
+</head>
+<style>
+    #circle
+    {
+        height:160px;
+        width:160px;
+        background-color:pink;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 10px;
+        border-color:  rgb(98, 241, 208);
+        margin:60px;
+        text-align:center;
+        position: relative;
+    
+    }
+
+    h1
+    {
+        font-family:'Trebuchet MS';
+        margin-top:20px;
+        position:absolute;
+    }
+
+    button
+    {   
+        margin-top:100px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+</style>
+
+<body>
+    <script>
+        
+        function colorChange() {
+            //console.log('Its a pink button with a green border');
+            let circle = document.getElementById("circle");
+            circle.style.backgroundColor = "red";
+            circle.style.borderColor = "#991900";
+            //document.getElementById('circle').style.backgroundColor = "black";
+            // document.getElementById('circle').style.borderColor = "red";
+        }
+        function colorChangeBlue() {
+            document.getElementById('circle').style.backgroundColor = "aliceblue";
+            document.getElementById('circle').style.borderColor = "blue";
+        }
+    </script>
+    <div id="circle">
+        <h1>My First JavaScript</h1>
+        <button onClick="colorChange()">Red</button>  
+        <button onClick="colorChangeBlue()">Blue</button>
+    </div>
+</body>
+</html>

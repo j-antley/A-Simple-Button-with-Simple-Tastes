@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miro_Board</title>
+
+    <link rel="stylesheet" href="mirocss.css">
+
+    <script>
+    function addSticky(){
+        document.getElementById('sticky').style.backgroundColor="red";
+        }
+    function addStickyReal(){
+        const note = document.createElement("div");
+        note.innerHTML = "<input type='text'>";
+        document.getElementById("containerId").appendChild(note);
+        }
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "moveablediv")) {
+                //the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "moveablediv").onmousedown = dragMouseDown;
+            } 
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+    <style>
+/* div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    float: left;
+    margin:20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+} */
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    padding:20px;
+}
+
+input[type=text] {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: x-large;
+    color: rgb(198, 189, 124);
+    box-sizing: border-box;
+  }
+/* draggable css stuff */
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    margin-left: 20px;
+  }
+  
+  #moveablediv{
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  .button
+  {
+    height:30px;
+    width:70px;
+  }
+    </style>
+</head>
+<body>
+    <!-- <script src="mirojs.js"></script> -->
+    <!-- Background -->
+    <div id="containerId" class="container">
+        <!-- single sticky with text typing -->
+        <div id="mydiv">
+            <div id="moveablediv">
+                <input type="text" id="sticky"/>
+            </div>
+        </div>
+    </div>
+        <!-- button -->
+        <button onclick="addSticky()">click</button>
+        <button onclick="addStickyReal()">click</button>
+    </div>
+        
+<!-- draggable stuff experiment below -->
+        <!-- <div id="mydiv">
+            <div id="moveablediv">
+                <input type="text" id="sticky"/>
+            </div>
+        </div>
+    </div>
+      -->
+</body>
+</html>
